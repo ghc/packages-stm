@@ -30,3 +30,6 @@ test('stm064', normal, compile_and_run, ['-package stm'])
 test('stm065', normal, compile_and_run, ['-package stm'])
 test('cloneTChan001', normal, compile_and_run, ['-package stm'])
 test('T14171', exit_code(1), compile_and_run, ['-package stm'])
+test('T14130', [only_ways(['threaded1', 'threaded2']),
+                extra_run_opts('check +RTS -N2')],
+     compile_and_run, ['-package stm'])
